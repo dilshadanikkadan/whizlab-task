@@ -4,10 +4,10 @@ import database from "../_boot/databse";
 
 
  /*
-    this is the main fn() in boot will be called in index file
+    this is  fn() in boot will be called in index file
   */
  
-export const main = async () => {
+export const bootAllDependencies = async () => {
 
     try {
         

@@ -1,6 +1,5 @@
-import { main } from "./_boot"
+import { bootAllDependencies } from "./_boot";
 
-const start =()=>{
-    main()
-}
-start()
+(function () {
+    bootAllDependencies();
+})();
