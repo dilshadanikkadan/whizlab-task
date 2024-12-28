@@ -17,7 +17,6 @@ it('returns 200 if getting all inventories which added',async()=>{
     const response = await request(app)
     .get('/inventory')
     .expect(200);
-    console.log(response.body);
     
     expect(response.body).toBeTruthy();
     expect(Array.isArray(response.body)).toBe(true);
