@@ -33,8 +33,10 @@ class InventroryRepository {
   }
 
   public async deleteSingleDoc(id: string) {
+    console.log("object id",id);
+    
     if (!mongoose.isValidObjectId(id)) throw new ObjectIdError();
-    return await this.inevntoryModel.findByIdAndDelete(id);
+    return await this.inevntoryModel.findByIdAndDelete(id.trim());
   }
   public async updateDoc(id: string, payload: Partial<InventroyDto>) {
     if (!mongoose.isValidObjectId(id)) throw new ObjectIdError();

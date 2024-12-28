@@ -15,9 +15,10 @@ class InventroryController {
 
   public async buildInventory(req: Request, res: Response, next: NextFunction) {
     const { body } = req;
+    
     try {
       const response = await this.inventroryService.buildInventory(body);
-
+      
       res.status(201).json(response);
     } catch (error) {
       next(error);
@@ -54,7 +55,7 @@ class InventroryController {
     try {
       const response = await this.inventroryService.deleteInventory(id);
 
-      res.status(200).json(response);
+      res.status(200).json("successfulley deleted");
     } catch (error) {
       next(error);
     }

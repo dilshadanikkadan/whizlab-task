@@ -22,6 +22,9 @@ const inventorySchema = new Schema(
     category: {
       type: String,
     },
+    description: {
+      type: String,
+    },
   },
   {
     timestamps: true,
