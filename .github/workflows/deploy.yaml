@@ -20,7 +20,7 @@ jobs:
         
       - name: Run Test  
         working-directory: ./server
-        run: npm test
+        run: npm test -- --forceExit
         
       - name: Set up QEMU
         if: success()
