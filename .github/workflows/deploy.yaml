@@ -1,53 +1,16 @@
-name: Test, Build and publish backend service
-
-on:
-  push:
-    branches: ['main']
-    paths:
-      - "server/**"
-  
+name: deploy application
+on : push
 jobs:
-  test_and_push:
-    name: Test, Build and Push Docker image
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out the repo
-        uses: actions/checkout@v3
-        
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          
-      - name: Install Dependencies
-        working-directory: ./server
-        run: npm install
-        
-      - name: Run Tests
-        working-directory: ./server
-        run: npm run test
-        
-        
-      - name: Set up QEMU
-        if: success()  
-        uses: docker/setup-qemu-action@v2
-      
-      - name: Set up Docker Buildx
-        if: success()
-        uses: docker/setup-buildx-action@v2
-        
-      - name: Login to Docker Hub
-        if: success()
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-    
-      - name: Build and push Docker image
-        if: success()
-        uses: docker/build-push-action@v4
-        with:
-          context: ./server/
-          platforms: linux/amd64,linux/arm64
-          push: true
-          tags: dilshadjr3312/whizlab-task:latest
+  test:
+     runs-on: ubuntu-24.04
+     steps:
+        - name: Get code
+          uses: actions/checkout@v3
+        - name: Install node js   
+          uses: actions/setup-node@v3
+          with:
+            node-version: 18
+        - name: Install dependencies
+          run: npm ci
+        - name: Run Test  
+          run: npm test       
