@@ -17,6 +17,10 @@ app.use(cors(corsOptions));
 
 app.use('/inventory',inventroyRoutes)
 
+app.get('/',(_,res)=>{
+  res.send('server is on!!!')
+})
+
 app.use(errorHandler)
 
 export default app;
