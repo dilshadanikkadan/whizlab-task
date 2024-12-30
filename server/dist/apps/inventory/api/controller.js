@@ -9,6 +9,7 @@ const schema_1 = require("../infrastructure/mongo/schema");
 class InventroryController {
     inventroryService;
     constructor(inventroryService) {
+        //  binding all method with own class ctx
         this.inventroryService = inventroryService;
         this.buildInventory = this.buildInventory.bind(this);
         this.getAllInentory = this.getAllInentory.bind(this);
@@ -66,4 +67,7 @@ class InventroryController {
         }
     }
 }
+/**
+ * Performing Dependency injection for loose coupling between classes
+ */
 exports.default = new InventroryController(new service_1.default(new repository_1.default(schema_1.InventoryModel)));

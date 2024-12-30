@@ -1,6 +1,10 @@
 import { useState, useCallback } from "react";
 import { getRequest } from "../lib/axios/axios";
 
+
+/**
+ *custom hook for query data
+ */ 
 const useRequest = (endpoint: string) => {
   const [data, setData] = useState<any>(null);
   const [error, setError] = useState<String | null>(null);

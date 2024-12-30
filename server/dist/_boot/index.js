@@ -7,8 +7,8 @@ exports.bootAllDependencies = void 0;
 const server_1 = __importDefault(require("../_boot/server"));
 const index_1 = __importDefault(require("../index"));
 const databse_1 = __importDefault(require("../_boot/databse"));
-/*
-   this is  fn() in boot will be called in index file
+/**
+ * This fn will boot all  Dependencies  along with its parameters
  */
 const bootAllDependencies = async () => {
     try {

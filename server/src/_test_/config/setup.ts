@@ -1,13 +1,9 @@
 import { MongoMemoryServer } from "mongodb-memory-server";
 import mongoose from "mongoose";
 
-declare global {
-  namespace NodeJS {
-    interface Global {
-      signin(): string[];
-    }
-  }
-}
+/**
+ * SET UP OF JEST
+ */ 
 
 let mongo: any;
 beforeAll(async () => {

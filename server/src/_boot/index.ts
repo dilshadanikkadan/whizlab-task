@@ -3,9 +3,10 @@ import app from "../index";
 import database from "../_boot/databse";
 
 
- /*
-    this is  fn() in boot will be called in index file
-  */
+/**
+ * This fn will boot all  Dependencies  along with its parameters
+ */ 
+
  
 export const bootAllDependencies = async () => {
 

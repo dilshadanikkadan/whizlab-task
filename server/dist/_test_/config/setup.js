@@ -5,6 +5,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongodb_memory_server_1 = require("mongodb-memory-server");
 const mongoose_1 = __importDefault(require("mongoose"));
+/**
+ * SET UP OF JEST
+ */
 let mongo;
 beforeAll(async () => {
     process.env.JWT_KEY = 'dilu';

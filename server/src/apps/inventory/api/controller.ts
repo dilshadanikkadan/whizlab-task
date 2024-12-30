@@ -6,6 +6,9 @@ import { InventroyDto } from "../domain/dtos/inventory.dtos";
 
 class InventroryController {
   constructor(private inventroryService: InventroryService) {
+    
+    //  binding all method with own class ctx
+
     this.buildInventory = this.buildInventory.bind(this);
     this.getAllInentory = this.getAllInentory.bind(this);
     this.getInventory = this.getInventory.bind(this);
@@ -15,10 +18,10 @@ class InventroryController {
 
   public async buildInventory(req: Request, res: Response, next: NextFunction) {
     const { body } = req;
-    
+
     try {
       const response = await this.inventroryService.buildInventory(body);
-      
+
       res.status(201).json(response);
     } catch (error) {
       next(error);
@@ -80,6 +83,10 @@ class InventroryController {
   }
 }
 
+
+/**
+ * Performing Dependency injection for loose coupling between classes
+ */ 
 export default new InventroryController(
   new InventroryService(new InventroryRepository(InventoryModel))
 );

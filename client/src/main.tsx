@@ -7,7 +7,7 @@ import StoreProvider from "./store/StoreProvider.tsx";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <StoreProvider>
-      <App />
+        <App />
     </StoreProvider>
   </StrictMode>
 );
