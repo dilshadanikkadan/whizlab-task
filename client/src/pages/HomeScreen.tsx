@@ -10,9 +10,9 @@ const HomeScreen = () => {
       <Navbar />
       <Greeting />
       <div className="wrapper w-[90%] mx-auto mt-8 flex flex-wrap gap-10">
-        <HomeCard />
-        <HomeCard />
-        <HomeCard />
+        <HomeCard  number={4} title="Category"/>
+        <HomeCard  number={10} title="Inventory"/>
+        <HomeCard  number={6} title="Upcoming"/>
       </div>
       <div className="btnWrapper w-[90%] mx-auto mt-8 flex justify-end">
         <button

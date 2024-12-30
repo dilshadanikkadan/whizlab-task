@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  // baseURL: "http://localhost:3000",
-  baseURL: "https://whizlab-task-5tkc.vercel.app",
+  baseURL: "http://localhost:3000",
+  // baseURL: "https://whizlab-task-5tkc.vercel.app",
   withCredentials: true,
 });
 

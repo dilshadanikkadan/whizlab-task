@@ -7,7 +7,10 @@ import { IFormData } from "../../../utils/constnants";
 import { context } from "../../../store/StoreProvider";
 import Loading from "../../loader/Loading";
 import InventoryViewModal from "./ViewCard";
+import { useNavigate } from "react-router-dom";
 const AllInventory = () => {
+  const navigate = useNavigate()
+
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState<boolean>(false);
   const [isViewModalOpen, setIsViewModalOpen] = useState<boolean>(false);
@@ -15,7 +18,7 @@ const AllInventory = () => {
     useState<IFormData | null>(null);
   const { inventories, fetchData, loading } = useContext(context);
   const [updateMode, setUpdateMode] = useState<boolean>(false);
-
+  
   useEffect(() => {
     fetchData();
   }, []);
@@ -25,13 +28,21 @@ const AllInventory = () => {
 
   return (
     <main className="">
-      <div className="btn w-[80%] mx-auto mt-5 flex justify-end">
+      <div className="btn  w-[90%] mx-auto  mt-5 flex justify-end md:justify-between ">
+        
+        <Button
+          onClick={() => navigate('/')}
+          className="text-white  hidden md:block bg-[#CA5C67] rounded-md py-1.5 px-3 "
+        >
+          Back To Home
+        </Button>
         <Button
           onClick={() => setIsModalOpen(true)}
-          className="text-white bg-[#CA5C67] rounded-md py-1.5 px-3 "
+          className="text-white  bg-[#CA5C67] rounded-md py-1.5 px-3 "
         >
           Add newInventory
         </Button>
+        
       </div>
       {
         isViewModalOpen &&

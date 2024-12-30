@@ -20,7 +20,7 @@ const InventoryCard = ({
   setIsViewModalOpen
 }: Props) => {
   return (
-    <div key={index} className="w-full md:w-64 bg-white rounded-lg p-6 overflow-hidden">
+    <div key={index} className="w-full md:w-[17.3rem] bg-white rounded-lg p-6 overflow-hidden">
       <div className="flex items-start space-x-4">
         <div className="bg-[#F4F5FA] p-3 rounded-lg border-2 border-gray-200">
           <MonitorSmartphone size={24} className="text-primary" />
