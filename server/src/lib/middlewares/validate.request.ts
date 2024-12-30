@@ -9,9 +9,7 @@ export const validateRequest = (
   next: NextFunction
 ) => {
   const errors = validationResult(req);
-  console.log("=============");
-  console.log(errors)
-  console.log("=============");
+
   
   if (!errors.isEmpty()) {
     throw new RequestValidationError(errors.array());
