@@ -1,8 +1,7 @@
 import wallet from "../../../assets/images/wallet.png";
 
-type Props = {};
 
-const HomeCard = (props: Props) => {
+const HomeCard = () => {
   return (
     <section className="w-full md:w-[31%]  bg-white rounded-lg p-5 flex flex-col gap-4 ovef">
       <div className="imageContainer w-[20%]  bg-[#F4F5FA] rounded-lg py-2 flex items-center justify-center border-2 border-gray-200">

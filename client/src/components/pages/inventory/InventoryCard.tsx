@@ -1,4 +1,3 @@
-import React from "react";
 import { MonitorSmartphone, Eye, Pencil, Trash2 } from "lucide-react";
 import Button from "../../ui/Button";
 import { IFormData } from "../../../utils/constnants";

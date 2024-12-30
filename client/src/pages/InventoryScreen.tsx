@@ -1,10 +1,8 @@
-import React from 'react'
 import Navbar from '../components/layoutes/Navbar'
 import AllInventory from '../components/pages/inventory/AllInventory'
 
-type Props = {}
 
-const InventoryScreen = (props: Props) => {
+const InventoryScreen = () => {
   return (
     <div>
         <Navbar/>

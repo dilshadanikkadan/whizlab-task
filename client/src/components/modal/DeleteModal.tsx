@@ -1,5 +1,4 @@
 import { X } from "lucide-react";
-import React from "react";
 import { deleterequest } from "../../lib/axios/axios";
 
 type Props = {
@@ -19,7 +18,7 @@ const DeleteModal = ({
     console.log("object id is", currentSelectedItemId);
     // return;
     try {
-      const res = await deleterequest("/inventory", currentSelectedItemId);
+      await deleterequest("/inventory", currentSelectedItemId);
       setIsDeleteModalOpen(false);
       handleDeleteSuccess()
     } catch (error) {}
