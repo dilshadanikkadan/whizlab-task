@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    
     "test": "jest --watchAll --no-cache",
     "start": "node dist/server.js",
     "dev": "nodemon src/server.ts",
